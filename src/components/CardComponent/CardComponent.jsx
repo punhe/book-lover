@@ -1,6 +1,5 @@
 import React from "react";
 import {
-  StyleBody,
   StyleNameProduct,
   WrapperCardStyle,
   WrapperDiscountText,
@@ -11,7 +10,6 @@ import { StarFilled } from "@ant-design/icons";
 
 const CardComponent = () => {
   return (
-    <StyleBody>
       <WrapperCardStyle
         hoverable
         style={{ width: 240 }}
@@ -35,7 +33,6 @@ const CardComponent = () => {
           <WrapperDiscountText>-5%</WrapperDiscountText>
         </WrapperPriceText>
       </WrapperCardStyle>
-    </StyleBody>
   );
 };
 

@@ -1,9 +1,7 @@
 import { Card } from "antd";
 import styled from "styled-components";
 
-export const StyleBody = styled.div`
-    padding: 10px;
-`
+
 export const WrapperCardStyle = styled(Card)`
     width: 200px;
     & img {
