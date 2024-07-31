@@ -17,7 +17,7 @@ const TypeProductPage = () => {
         <Col
           span={4}
           style={{
-            background: "fff",
+            background: "#fff",
             marginRight: "10px",
             padding: "10px",
             borderRadius: "6px",
