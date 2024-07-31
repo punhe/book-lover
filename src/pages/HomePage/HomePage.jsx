@@ -5,7 +5,7 @@ import SliderComponent from "../../components/SliderComponent/SliderComponent";
 import slider1 from "../../assets/images/slider1.webp";
 import slider2 from "../../assets/images/slider2.webp";
 import CardComponent from "../../components/CardComponent/CardComponent";
-
+import { WrapperProducts } from "./style";
 const HomePage = () => {
   const arr = ["TV", "P/S"];
   return (
@@ -26,21 +26,18 @@ const HomePage = () => {
         }}
       >
         <SliderComponent arrImages={[slider1, slider2]} />
-        <div
-          style={{
-            marginTop: "20px",
-            display: "flex",
-            alignItems: "center",
-            gap: "20px",
-            flexWrap: "wrap",
-          }}
-        >
+        <WrapperProducts>
           <CardComponent />
           <CardComponent />
           <CardComponent />
           <CardComponent />
           <CardComponent />
-        </div>
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+          <CardComponent />
+        </WrapperProducts>
         <div
           style={{
             width: "100%",
@@ -60,7 +57,7 @@ const HomePage = () => {
               borderRadius: "4px",
             }}
             styleTextButton={{ fontWeight: 500 }}
-          />  
+          />
         </div>
       </div>
     </>
