@@ -3,7 +3,7 @@ import NotFoundPage from "../pages/NotFoundPage/NotFoundPage";
 import OrderPage from "../pages/OrderPage/OrderPage";
 import ProductDetailPage from "../pages/ProductDetailPage/ProductDetailPage";
 import ProductsPage from "../pages/ProductsPage/ProductsPage";
-import SignInPage, { SigninPage } from "../pages/SigninPage/SigninPage";
+import SignInPage from "../pages/SignInPage/SignInPage";
 import SignUpPage from "../pages/SignUpPage/SignUpPage";
 import TypeProductPage from "../pages/TypeProductPage/TypeProductPage";
 
@@ -29,12 +29,12 @@ export const routes = [
         isShowHeader: true
     },
     {
-        path:'/Sign-in',
-        page: SigninPage,
+        path:'/sign-in',
+        page: SignInPage,
         isShowHeader: true
     },
     {
-        path:'/Sign-up',
+        path:'/sign-up',
         page: SignUpPage,
         isShowHeader: true
     },

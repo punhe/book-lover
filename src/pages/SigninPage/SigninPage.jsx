@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const SigninPage = () => {
+export const SignInPage = () => {
   return (
     <div>SignInPage</div>
   )
