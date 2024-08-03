@@ -1,8 +1,15 @@
-import React from 'react'
+import React from "react";
+import { WrapperContainerLeft, WrapperContainerRight } from "./style";
 
-export const SignUpPage = () => {
+export const SignInPage = () => {
   return (
-    <div>SignUpPage</div>
-  )
-}
-export default SignUpPage
+    <div>
+      <WrapperContainerLeft>
+        <h1>Hello</h1>
+        <p>Login or Register</p>
+      </WrapperContainerLeft>
+      <WrapperContainerRight></WrapperContainerRight>
+    </div>
+  );
+};
+export default SignInPage;
