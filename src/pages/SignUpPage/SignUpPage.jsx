@@ -1,14 +1,14 @@
 import React from "react";
-// import { WrapperContainerLeft, WrapperContainerRight } from "./style";
+import { WrapperContainerLeft, WrapperContainerRight } from "./style";
 
 export const SignInPage = () => {
   return (
     <div>
-      {/* <WrapperContainerLeft>
+      <WrapperContainerLeft>
         <h1>Hello</h1>
         <p>Login or Register</p>
       </WrapperContainerLeft>
-      <WrapperContainerRight></WrapperContainerRight> */}
+      <WrapperContainerRight></WrapperContainerRight>
     </div>
   );
 };
