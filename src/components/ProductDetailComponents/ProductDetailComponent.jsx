@@ -5,7 +5,6 @@ import imageSmall from "../../assets/images/imgSmall.webp";
 import {
   WarperStyleNameProduct,
   WrapperAddressProduct,
-  WrapperBtnQualityProduct,
   WrapperInputNumber,
   WrapperPriceProduct,
   WrapperPriceTextProduct,
@@ -15,68 +14,46 @@ import {
   WrapperStyleTextSell,
 } from "./style";
 import { StarFilled, PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import ButtonComponent from "../ButtonComponent/ButtonComponent";
+
 export const ProductDetailComponent = () => {
-  const onchange = () => {};
+  const onChange = () => {};
+
   return (
     <div style={{ padding: "16px", background: "#fff" }}>
       <Row>
-        <Col span={10}>
+        <Col
+          span={10}
+          style={{
+            borderRight: "1px solid #e5e5e5",
+            paddingRight: "8px",
+            borderRadius: "8px",
+          }}
+        >
           <Image src={images} alt="image product" preview={true} />
           <Row style={{ paddingTop: "10px", justifyContent: "space-between" }}>
-            <WrapperStyleColImage span={4}>
-              <WrapperStyleImageSmall
-                src={imageSmall}
-                alt="image product"
-                preview={false}
-              />
-            </WrapperStyleColImage>
-            <WrapperStyleColImage span={4}>
-              <WrapperStyleImageSmall
-                src={imageSmall}
-                alt="image product"
-                preview={false}
-              />
-            </WrapperStyleColImage>
-            <WrapperStyleColImage span={4}>
-              <WrapperStyleImageSmall
-                src={imageSmall}
-                alt="image product"
-                preview={false}
-              />
-            </WrapperStyleColImage>
-            <WrapperStyleColImage span={4}>
-              <WrapperStyleImageSmall
-                src={imageSmall}
-                alt="image product"
-                preview={false}
-              />
-            </WrapperStyleColImage>
-            <WrapperStyleColImage span={4}>
-              <WrapperStyleImageSmall
-                src={imageSmall}
-                alt="image product"
-                preview={false}
-              />
-            </WrapperStyleColImage>
-            <WrapperStyleColImage span={4}>
-              <WrapperStyleImageSmall
-                src={imageSmall}
-                alt="image product"
-                preview={false}
-              />
-            </WrapperStyleColImage>
+            {[...Array(6)].map((_, index) => (
+              <WrapperStyleColImage span={4} key={index}>
+                <WrapperStyleImageSmall
+                  src={imageSmall}
+                  alt={`image product ${index + 1}`}
+                  preview={false}
+                />
+              </WrapperStyleColImage>
+            ))}
           </Row>
         </Col>
-        <Col span={14}>
+        <Col span={14} style={{ paddingLeft: "10px" }}>
           <WarperStyleNameProduct>
             Book - famous detective - conan - combo 10 set 81 to 91
           </WarperStyleNameProduct>
           <div>
-            <StarFilled style={{ fontSize: "12px", color: "yellow" }} />
-            <StarFilled style={{ fontSize: "12px", color: "yellow" }} />
-            <StarFilled style={{ fontSize: "12px", color: "yellow" }} />
-            <StarFilled style={{ fontSize: "12px", color: "yellow" }} />
-            <StarFilled style={{ fontSize: "12px", color: "yellow" }} />
+            {[...Array(5)].map((_, index) => (
+              <StarFilled
+                key={index}
+                style={{ fontSize: "12px", color: "yellow" }}
+              />
+            ))}
             <WrapperStyleTextSell> | sold 1000+ </WrapperStyleTextSell>
           </div>
           <WrapperPriceProduct>
@@ -84,27 +61,66 @@ export const ProductDetailComponent = () => {
           </WrapperPriceProduct>
           <WrapperAddressProduct>
             <span>Ship to </span>
-            <span className="address">
-              Q . 1, P. Ben Nghe, Ho Chi Minh City
-            </span>
+            <span className="address">Q. 1, P. Ben Nghe, Ho Chi Minh City</span>
             <span className="change-address"> Change address</span>
           </WrapperAddressProduct>
-          <WrapperQualityProduct>
-            <div>Quality</div>
+          <div
+            style={{
+              margin: "10px 0px 20px",
+              borderTop: "1px solid #e5e5e5",
+              borderBottom: "1px solid #e5e5e5",
+              padding: "10px 0",
+            }}
+          >
+            <div style={{ marginBottom: "15px" }}>Quantity</div>
             <WrapperQualityProduct>
-              <WrapperBtnQualityProduct>
-                <PlusOutlined style={{ color: "#000", fontsize: "15px" }} />
-              </WrapperBtnQualityProduct>
+              <button style={{ border: "none", background: "transparent" }}>
+                <PlusOutlined style={{ color: "#000", fontSize: "15px" }} />
+              </button>
               <WrapperInputNumber
                 defaultValue={1}
-                onChange={onchange}
+                min={0}
+                className="ant-input-number-small"
+                onChange={onChange}
                 size="small"
               />
-              <WrapperBtnQualityProduct>
-                <MinusOutlined style={{ color: "#000", fontsize: "15px" }} />
-              </WrapperBtnQualityProduct>
+              <button style={{ border: "none", background: "transparent" }}>
+                <MinusOutlined style={{ color: "#000", fontSize: "15px" }} />
+              </button>
             </WrapperQualityProduct>
-          </WrapperQualityProduct>
+          </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <ButtonComponent
+              size={40}
+              styleButton={{
+                background: "rgb(255, 57, 69)",
+                height: "40px",
+                width: "220px",
+                border: "none",
+                borderRadius: "4px",
+              }}
+              bordered={false}
+              textButton={"click to buy"}
+              styleTextButton={{
+                color: "#fff",
+                fontSize: "15px",
+                fontWeight: "700",
+              }}
+            />
+            <ButtonComponent
+              size={40}
+              styleButton={{
+                background: "#fff",
+                height: "40px",
+                width: "220px",
+                border: "1px solid black",
+                borderRadius: "4px",
+              }}
+              bordered={false}
+              textButton={"Buy and pay laster"}
+              styleTextButton={{ color: "rgb(12,92,182)", fontSize: "15px" }}
+            />
+          </div>
         </Col>
       </Row>
     </div>

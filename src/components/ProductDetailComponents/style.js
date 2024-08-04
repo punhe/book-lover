@@ -10,12 +10,13 @@ export const WrapperStyleColImage = styled(Col)`
   flex-basis: unset;
   display: flex;
 `;
+
 export const WarperStyleNameProduct = styled.h1`
   color: rgb(36, 36, 36);
   font-size: 24px;
   font-weight: 300;
   line-height: 32px;
-  word-break: break-work;
+  word-break: break-word;
 `;
 
 export const WrapperStyleTextSell = styled.span`
@@ -23,6 +24,7 @@ export const WrapperStyleTextSell = styled.span`
   line-height: 24px;
   color: rgb(120, 120, 120);
 `;
+
 export const WrapperPriceProduct = styled.div`
   background: rgb(250, 250, 250);
   border-radius: 4px;
@@ -53,17 +55,30 @@ export const WrapperAddressProduct = styled.div`
     font-weight: 500;
   }
 `;
+
 export const WrapperQualityProduct = styled.div`
   display: flex;
   gap: 4px;
   align-items: center;
-  border-radius: 2px;
-  border: 1px solid #ccc;
+  width: 120px;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 4px;
+  width: 78px;
 `;
-export const WrapperBtnQualityProduct = styled.span``;
 
 export const WrapperInputNumber = styled(InputNumber)`
-  & .ant-input-number .ant-input-number-small {
-    width: 40px;
+  &.ant-input-number.ant-input-number-small {
+    width: 60px !important;
+    border-top: none !important;
+    border-button: none !important;
+  }
+  & .ant-input-number-handler-wrap {
+    display: none;
+  }
+  border: none;
+  width: 60px;
+  &.ant-input-number-sm input.ant-input-number-input {
+    width: 100px;
   }
 `;
