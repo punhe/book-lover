@@ -1,28 +1,47 @@
 import { Badge, Col } from "antd";
 import React from "react";
-import { WrapperHeader, WrapperHeaderAccount, WrapperTextHeader, WrapperTextHeaderSmall } from "./style";
-import { UserOutlined, CaretDownOutlined, ShoppingCartOutlined } from "@ant-design/icons";
+import {
+  WrapperHeader,
+  WrapperHeaderAccount,
+  WrapperTextHeader,
+  WrapperTextHeaderSmall,
+} from "./style";
+import {
+  UserOutlined,
+  CaretDownOutlined,
+  ShoppingCartOutlined,
+} from "@ant-design/icons";
 import ButtonInputSearch from "../ButtonInputSearch/ButtonInputSearch";
 
 const HeaderComponent = () => {
   return (
-    <div>
-      <WrapperHeader gutter={16}>
-        <Col span={6}>
+    <div
+      style={{
+        width: "100%",
+        background: "rbg(26, 148, 255)",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <WrapperHeader>
+        <Col span={5}>
           <WrapperTextHeader>HungVuaCa</WrapperTextHeader>
         </Col>
-        <Col span={12}>
+        <Col span={13}>
           <ButtonInputSearch
             placeholder="input search text"
-            allowClear
+            bordered={false}
             textButton="Search"
             size="large"
             // onSearch={onSearch}
           />
         </Col>
-        <Col span={6} style={{display:'flex', gap: '20px', alignItems: 'center'}}>
+        <Col
+          span={6}
+          style={{ display: "flex", gap: "54px", alignItems: "center" }}
+        >
           <WrapperHeaderAccount>
-            <UserOutlined style={{ fontSize: ' 30px '}}/>
+            <UserOutlined style={{ fontSize: " 30px " }} />
             <div>
               <WrapperTextHeaderSmall>Login/Register</WrapperTextHeaderSmall>
               <div>
@@ -32,9 +51,11 @@ const HeaderComponent = () => {
             </div>
           </WrapperHeaderAccount>
           <div>
-          <Badge count ={4} size="small">
-            <ShoppingCartOutlined style={{ fontSize: ' 30px ', color: '#fff'}}/>
-          </Badge>
+            <Badge count={4} size="small">
+              <ShoppingCartOutlined
+                style={{ fontSize: " 30px ", color: "#fff" }}
+              />
+            </Badge>
             <WrapperTextHeaderSmall>Cart</WrapperTextHeaderSmall>
           </div>
         </Col>

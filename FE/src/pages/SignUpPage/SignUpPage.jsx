@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { WrapperContainerLeft, WrapperContainerRight, WrapperTextLight } from "./style";
 import InputForm from "../../components/InputForm/InputForm";
 import ButtonComponent from "../../components/ButtonComponent/ButtonComponent";
 import { Image } from "antd";
 import imageLogo from "../../assets/images/register-logo.png"
+import {
+  EyeOutlined, EyeInvisibleOutlined
+} from '@ant-design/icons';
 
 export const SignInPage = () => {
+  const [isShowPassword, setIsShowPassword] = useState(false)
   return (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#ccc'}}>
     <div style={{ width: "800px", height: "445px", borderRasius: "6px", background: '#fff', display: 'flex'}}>
@@ -13,8 +17,36 @@ export const SignInPage = () => {
         <h1>Hello</h1>
         <p>Please login your account</p>
         <InputForm style={{marginBottom: '10px'}} placeholder="abc@gmail.com" />
-        <InputForm placeholder="password" style={{marginBottom: '10px'}}/>
-        <InputForm placeholder="confirm password" />
+        <div style={{ position: "relative" }}>
+            <span
+              style={{
+                zIndex: 10,
+                position: "absolute",
+                top: "4px",
+                right: "8px",
+              }}
+            >
+              {isShowPassword ? (
+                <EyeOutlined />
+              ) : (<EyeInvisibleOutlined />)}
+            </span>
+            <InputForm placeholder="password" type={isShowPassword ? 'text' : 'password'} style={{marginBottom: '10px'}}/>
+          </div>
+          <div style={{ position: "relative" }}>
+            <span
+              style={{
+                zIndex: 10,
+                position: "absolute",
+                top: "4px",
+                right: "8px",
+              }}
+            >
+              {isShowPassword ? (
+                <EyeOutlined />
+              ) : (<EyeInvisibleOutlined />)}
+            </span>
+            <InputForm placeholder="confirm password" type={isShowPassword ? 'text' : 'password'} />
+          </div>
         <ButtonComponent
           bordered={false}
           size={40}
